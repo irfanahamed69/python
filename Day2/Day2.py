@@ -40,3 +40,53 @@ lis = [1, 3, 3, 4, 5, 6]
 newlis = [pow(int(x), 2) for x in lis if x % 2 != 0]
 
 print(newlis)
+
+##write a lambda expression to return average given a total and count
+avg = lambda a,b: (a + b)/2
+print(avg(5,10))
+
+##while loop without else block getting invoked
+num = 1
+while num < 10:
+    if (num % 2 == 0):
+        print(num)
+        break
+    num = num + 1
+else:
+    print('Loop Completed after', num, ' iterations')
+    
+##while loop with else block getting invoked
+num = 1
+while num < 10:
+    if (num % 2 == 0):
+        print(num)
+    num = num + 1
+else:
+    print('Loop Completed after', num, ' iterations')
+    
+##Try list comp to get keys that are longer than 4 chars in a dict
+dict = {'colour':'blue','name':'ozil','company':'abc'}
+listcomp = [x for x in dict.keys() if len(x) > 4]
+print(listcomp)
+
+##implement nested list comp in any use case
+dict = {'colour':'blue','name':'ozil','company':'abc'}
+listcomp = [y for y in [x for x in dict.keys() if len(x) > 4] if y == 'colour']
+print(listcomp)
+
+##Improvise the guessing game from yesterday by providing 3 tries to the player
+import random
+random_number = random.randint(1, 10)
+num = int(input('Guess the number between 1 to 10 in 3 tries'))
+#print(random_number)
+if num >= random_number:
+    print('Guess lower')
+if num < random_number:
+    print('Guess higher')
+for i in range(2):
+    if num == random_number:
+        print('The number ', num, ' you guessed is correct')
+        break
+    num = int(input('Try again'))
+else:
+    print('Sorry retries exceeded')
