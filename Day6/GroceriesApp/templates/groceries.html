@@ -1,0 +1,11 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<h1>Groceries List</h1>
+{% for veg in var %}
+    {% if var|length == 1 %}
+        <h2>Vegetable name is <span style="color: #ff0000">{{ veg.vegetables }} </span> and its quantity  is {{veg.quantity }}!</h2>
+    {% endif %}
+    {% if var|length > 1 %}
+        <h2><span style="color: #ff0000">{{ veg.vegetables }} </span> </h2>
+    {% endif %}      
+{% endfor %}
