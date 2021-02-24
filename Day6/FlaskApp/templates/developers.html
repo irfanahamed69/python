@@ -1,0 +1,5 @@
+<!doctype html>
+<title>Hello from Flask</title>
+{% for user in var %}
+  <h1>User name is <span style="color: #ff0000">{{ user.name }}</span> and developer code is {{user.lang }}!</h1>
+{% endfor %}
