@@ -1,5 +1,11 @@
 <!doctype html>
 <title>Hello from Flask</title>
+<h1>Developers List</h1>
 {% for user in var %}
-  <h1>User name is <span style="color: #ff0000">{{ user.name }}</span> and developer code is {{user.lang }}!</h1>
+    {% if var|length == 1 %}
+        <h2>Developer name is <span style="color: #ff0000">{{ user.name }} </span> and developer code is {{user.lang }}!</h2>
+    {% endif %}
+    {% if var|length > 1 %}
+        <h2><span style="color: #ff0000">{{ user.name }} </span> </h2>
+    {% endif %}      
 {% endfor %}
